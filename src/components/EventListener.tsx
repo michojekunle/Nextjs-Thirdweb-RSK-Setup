@@ -4,7 +4,7 @@ import { provider } from "../utils/provider";
 import { Contract } from "ethers";
 
 const EventListener = () => {
-  const [messages, setMessages] = useState<string[]>(["hello world 1", "hello world 2"]);
+  const [messages, setMessages] = useState<string[]>([]);
 
   useEffect(() => {
     const contract = new Contract(CONTRACT_ADDRESS, CONTRACT_ABI, provider);
@@ -27,7 +27,12 @@ const EventListener = () => {
     ) => {
       if (isSubscribed) {
         console.log("📥 Event Received:", { from, message, timestamp });
-        setMessages((prev) => [...prev, `Sender: ${from}; \nMessage: ${message}; \nAt ${timestamp};`]);
+        setMessages((prev) => [
+          ...prev,
+          `Sender: ${from}; \nMessage: ${message}; \nAt: ${new Date(
+            timestamp * 1000
+          ).toLocaleString()};`,
+        ]);
       }
     };
 
