@@ -1,0 +1,3 @@
+export const CONTRACT_ABI = [{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"sender","type":"address"},{"indexed":false,"internalType":"string","name":"message","type":"string"},{"indexed":false,"internalType":"uint256","name":"timestamp","type":"uint256"}],"name":"MessageSent","type":"event"},{"inputs":[{"internalType":"string","name":"_message","type":"string"}],"name":"sendMessage","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+
+export const CONTRACT_ADDRESS = "0xD8eBF6596fDcC47Ff468A78B89dd8476B3DC663E";
